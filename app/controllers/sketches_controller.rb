@@ -4,19 +4,26 @@ class SketchesController < ApplicationController
     @sketches = Sketch.all
   end
 
-  def show
-    @sketch = Sketch.find(params[:id])
+  def new
+    @sketch = Sketch.new
   end
 
-  def new
+  def edit
+  end
+
+  def show
+    @sketch = Sketch.find(params[:id])
   end
 
   def create
     # render plain: params[:sketch].inspect
     @sketch = Sketch.new(sketch_params)
 
-    @sketch.save
-    redirect_to @sketch
+    if(@sketch.save)
+      redirect_to @sketch
+    else
+      render 'new'
+    end
   end
 
   private

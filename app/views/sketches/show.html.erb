@@ -1,9 +1,9 @@
-<p>
   <strong>Title:</strong>
   <%= @sketch.title %>
-</p>
-
-<p>
+  </br>
   <strong>Text:</strong>
   <%= @sketch.text %>
+
+<p>
+  <%= link_to "Редактировать запись" , edit_sketch_path(@sketch) , :class => 'btn btn-warning' %>
 </p>

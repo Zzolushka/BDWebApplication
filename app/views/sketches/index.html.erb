@@ -1,17 +1,9 @@
-<h1>Sketches</h1>
+<h1>Все рисунки</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
-
-  <% @sketches.each do |sketch| %>
-    <tr>
-      <td><%= sketch.title %></td>
-      <td><%= sketch.text %></td>
-      <td><%= link_to 'Show', shetch_path(sketch) %><td>
-    </tr>
-  <% end %>
-<table>
+<% @sketches.each do |sketch| %>
+  <div class="well"
+    <h3><%= sketch.title %></h3>
+    <p><%= sketch.text %></p>
+  <%= link_to "Читать далее", sketch_path(sketch), :class => 'btn btn-default' %>
+  </div>
+<% end %>
