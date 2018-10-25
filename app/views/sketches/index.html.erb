@@ -1,0 +1,17 @@
+<h1>Sketches</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @sketches.each do |sketch| %>
+    <tr>
+      <td><%= sketch.title %></td>
+      <td><%= sketch.text %></td>
+      <td><%= link_to 'Show', shetch_path(sketch) %><td>
+    </tr>
+  <% end %>
+<table>
