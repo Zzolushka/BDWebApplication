@@ -6,4 +6,6 @@
 
 <p>
   <%= link_to "Редактировать запись" , edit_sketch_path(@sketch) , :class => 'btn btn-warning' %>
+
+  <%= link_to "Удалить запись" , sketch_path(@sketch), :method => :delete, :class => 'btn btn-danger' %>
 </p>

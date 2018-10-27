@@ -1,9 +1,21 @@
 <h1>Все рисунки</h1>
-
-<% @sketches.each do |sketch| %>
-  <div class="well"
-    <h3><%= sketch.title %></h3>
-    <p><%= sketch.text %></p>
-  <%= link_to "Читать далее", sketch_path(sketch), :class => 'btn btn-default' %>
-  </div>
-<% end %>
+<div class="row">
+<div class="col-sm-12 col-md-4">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLpXLHi1tjhehlD95-KE3yWzdgIgflt7PPO_b8jEDVYAvy-Q3lA">
+</div>
+<div class="col-sm-12 col-md-8">
+<div class="card-columns">
+  <% @sketches.each do |sketch| %>
+    <div class="card border-primary mb-3">
+      <div class="card-header bg-transparent border-primary text-center"><h3><%= sketch.title %></h3></div>
+      <div class="card-body text-dark">
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLpXLHi1tjhehlD95-KE3yWzdgIgflt7PPO_b8jEDVYAvy-Q3lA">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <%= link_to 'Просмотреть комментарии' , sketch_path(sketch), :class => 'btn btn-outline-primary '  %>
+      </div>
+      <div class="card-footer bg-transparent border-primary"></div>
+    </div>
+    <% end %>
+</div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<h1 class="text-center">Редактировать запись</h1>
+<%= form_for :sketch, url: sketch_path(@sketch), method: :patch do |form| %>
+  <% if @sketch.errors.any? %>
+    <% @sketch.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field(:title, {:class => 'form-control'}) %>
+  <p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area(:text, {:class => 'form-control'}) %>
+  <p>
+
+  <p>
+    <%= form.submit({:class => 'btn btn-default'})%>
+  </p>
+<% end %>
